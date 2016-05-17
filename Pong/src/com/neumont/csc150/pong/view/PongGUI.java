@@ -9,17 +9,17 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import com.neumont.csc150.pong.controller.PongGame;
 import com.neumont.csc150.pong.model.Ball;
 import com.neumont.csc150.pong.model.Paddle;
-import com.neumont.csc150.pong.model.PongGame;
 
 public class PongGUI extends JPanel implements ActionListener, KeyListener{
 
-	private PongGame game;
+	private static final long serialVersionUID = 1L;
 	private Ball ball;
 	private Paddle humanPaddle, computerPaddle;
 	private int humanScore, computerScore;
-	private boolean wPressed, sPressed;
+	private boolean upPressed, downPressed;
 	
 	public PongGUI(){
 		setBackground(Color.BLACK);
@@ -36,12 +36,12 @@ public class PongGUI extends JPanel implements ActionListener, KeyListener{
 		int humanSpeed = this.humanPaddle.getSpeed();
 		int humanPaddleHeight = this.humanPaddle.getHeight();
 		
-		if(wPressed){
+		if(upPressed){
 			if(humanYDelta - humanSpeed > 0){
 				humanYDelta -= humanSpeed;
 			}
 		}
-		if(sPressed){
+		if(downPressed){
 			if(humanYDelta + humanSpeed + humanPaddleHeight < humanPaddleHeight){
 				humanYDelta += humanSpeed;
 			}
@@ -61,22 +61,22 @@ public class PongGUI extends JPanel implements ActionListener, KeyListener{
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if(e.getKeyCode() == KeyEvent.VK_W){
-			wPressed = true;
+		if(e.getKeyCode() == KeyEvent.VK_UP){
+			upPressed = true;
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_S){
-			sPressed = true;
+		else if(e.getKeyCode() == KeyEvent.VK_DOWN){
+			downPressed = true;
 		}
 		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if(e.getKeyCode() == KeyEvent.VK_W){
-			wPressed = false;
+		if(e.getKeyCode() == KeyEvent.VK_UP){
+			upPressed = false;
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_S){
-			sPressed = false;
+		else if(e.getKeyCode() == KeyEvent.VK_DOWN){
+			downPressed = false;
 		}
 	}
 
