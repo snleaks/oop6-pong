@@ -51,6 +51,14 @@ public class PongGUI extends JPanel implements ActionListener, KeyListener{
 		}
 	}
 	
+	public void trackBall(){
+		//
+	}
+	
+	public void getScore(){
+		//
+	}
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_W){
