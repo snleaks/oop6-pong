@@ -2,23 +2,22 @@ package com.neumont.csc150.pong.model;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.util.Random;
 
-public class Paddle {
-	private Color color = new Color(200, 200, 200);
-	private int yDelta = 2;
-	private int height;
-	private static int width = 10;
-	private Point position;
+public class Ball {
+	private Random r = new Random();
+	private int yDelta = 1;
+	private int xDelta = 1;
+	private int size;
 	
-	//Possible overloaded constructor for custom games
-	//public Paddle(int height, Point p){
-	//	this.height = height;
-	//	position = new Point(p);
-	//}
-	
-	public Paddle(Point p){
-		this.height = 75;
-		position = new Point(p);
+	public Ball(){
+		yDelta = r.nextInt(6) - 3;
+		if(yDelta == 0)
+			yDelta++;
+		xDelta = r.nextInt(6) - 3;
+		if(xDelta == 0)
+			xDelta++;
+		size = 10;
 	}
 
 	public int getyDelta() {
@@ -29,27 +28,20 @@ public class Paddle {
 		this.yDelta = yDelta;
 	}
 
-	public int getHeight() {
-		return height;
+	public int getxDelta() {
+		return xDelta;
 	}
 
-	public void setHeight(int height) {
-		this.height = height;
+	public void setxDelta(int xDelta) {
+		this.xDelta = xDelta;
 	}
 
-	public int getWidth() {
-		return width;
+	public int getSize() {
+		return size;
 	}
 
-	public void setWidth(int width) {
-		this.width = width;
+	public void setSize(int size) {
+		this.size = size;
 	}
-
-	public Point getPosition() {
-		return position;
-	}
-
-	public void setPosition(Point position) {
-		this.position = position;
-	}
+	
 }
