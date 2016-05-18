@@ -11,10 +11,10 @@ public class Paddle {
 	private Point position;
 	
 	//Possible overloaded constructor for custom games
-	public Paddle(int height, Point p){
-		this.height = height;
-		position = new Point(p);
-	}
+	//public Paddle(int height, Point p){
+	//	this.height = height;
+	//	position = new Point(p);
+	//}
 	
 	public Paddle(Point p){
 		this.height = 75;
