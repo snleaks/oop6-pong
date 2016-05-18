@@ -2,22 +2,14 @@ package com.neumont.csc150.pong.model;
 
 import java.awt.Color;
 import java.awt.Point;
-import java.util.Random;
 
-public class Ball {
-	private Random r = new Random();
-	private int yDelta = 1;
-	private int xDelta = 1;
-	private int size;
+public class Paddle {
+	private int yDelta = 2;
+	private int height;
+	private static int width = 20;
 	
-	public Ball(){
-		yDelta = r.nextInt(6) - 3;
-		if(yDelta == 0)
-			yDelta++;
-		xDelta = r.nextInt(6) - 3;
-		if(xDelta == 0)
-			xDelta++;
-		size = 10;
+	public Paddle(){
+		this.height = 60;
 	}
 
 	public int getyDelta() {
@@ -28,20 +20,20 @@ public class Ball {
 		this.yDelta = yDelta;
 	}
 
-	public int getxDelta() {
-		return xDelta;
+	public int getHeight() {
+		return height;
 	}
 
-	public void setxDelta(int xDelta) {
-		this.xDelta = xDelta;
+	public void setHeight(int height) {
+		this.height = height;
 	}
 
-	public int getSize() {
-		return size;
+	public int getWidth() {
+		return width;
 	}
 
-	public void setSize(int size) {
-		this.size = size;
+	public void setWidth(int width) {
+		this.width = width;
 	}
-	
+
 }
