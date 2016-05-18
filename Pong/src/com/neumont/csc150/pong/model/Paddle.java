@@ -10,6 +10,7 @@ public class Paddle {
 	private static int width = 10;
 	private Point position;
 	
+	//Possible overloaded constructor for custom games
 	public Paddle(int height, Point p){
 		this.height = height;
 		position = new Point(p);
